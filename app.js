@@ -13,6 +13,7 @@ const planifRoutes = require('./routes/planif.route');
 const vehicleRoutes = require('./routes/vehicle.route');
 
 const app = express();
+app.use(express.json());
 
 // Routes
 app.use('/api/users', userRouter);

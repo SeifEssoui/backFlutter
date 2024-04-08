@@ -31,15 +31,16 @@ const authMiddleware = async (req, res, next) => {
     try {
       // test token
       const token = req.headers["authorization"];
+      console.log(token)
       // if the token is undefined =>
       if (!token) {
         return res.status(400).send({ errors: [{ msg: "Unauthorized1" }] });
       }
       // get the id from the token
-      const decoded = await jwt.verify(token, process.env.SECRET_KEY);
+      const decoded = await jwt.verify(token, process.env.JWT_SECRET);
   
       // search the user
-      const user = await User.findById(decoded.id).select("-password");
+      const user = await User.findById(decoded.userId).select("-password");
   
       // send not authorisation IF NOT USER
       if (!user) {

@@ -15,12 +15,17 @@ const planifSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  daysOfWeek: [{
-    type: String,
-    enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    required: true
-  }],
-  availablePlaces: {
+  // daysOfWeek: [{
+  //   type: String,
+  //   enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  //   required: true
+  // }],
+// verifier 
+  date:{
+type: Date,
+required: true
+  },
+  seatsNumber: {
     type: Number,
     required: true
   }

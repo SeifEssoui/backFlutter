@@ -1,32 +1,5 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
-
-// const authMiddleware = async (req, res, next) => {
-//     // Get token from request headers
-//     const token = req.headers['authorization'];
-
-//     if (!token) {
-//         return res.status(401).json({ message: 'Authorization token is required' });
-//     }
-
-//     try {
-//         // Verify token with JWT secret
-//         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-//         // Check if token is expired
-//         if (decoded.exp < Date.now() / 1000) {
-//             return res.status(401).json({ message: 'Token expired' });
-//         }
-
-//         // Fetch user details based on decoded userId
-//         req.user = await User.findById(decoded.userId);
-//         next();
-//     } catch (error) {
-//         console.log(error);
-//         // Handle invalid token or other verification errors
-//         res.status(401).json({ message: 'Invalid token' });
-//     }
-// };
 const authMiddleware = async (req, res, next) => {
     try {
       // test token

@@ -36,6 +36,11 @@ const userSchema = new mongoose.Schema({
     enum: ['admin', 'user'],
     default: 'user'
   },
+
+  isBlocked:{
+    type:Boolean,
+    default: false
+  },
   // Other user fields...
 
   favoritePlaces: [{
